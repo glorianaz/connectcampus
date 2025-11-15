@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav class="navbar">
+  <nav class="navbar" id="mainNav">
     <div class="nav-container">
       <div class="logo">ConnectCampus</div>
       <ul class="nav-menu">
@@ -15,17 +15,194 @@
         <li><a href="#social">Social Life</a></li>
         <li><a href="#community">Community</a></li>
         <li><a href="#opportunities">Opportunities</a></li>
-        <li><a href="#resources">Resources</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
-      <button id="profileBtn" class="profile-btn" aria-label="Open profile">
-        <!-- simple grey silhouette icon -->
-        <svg class="profile-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 12c2.761 0 5-2.239 5-5s-2.239-5-5-5-5 2.239-5 5 2.239 5 5 5z" fill="#bbb"/>
-          <path d="M4 20c0-3.314 2.686-6 6-6h4c3.314 0 6 2.686 6 6v1H4v-1z" fill="#bbb"/>
-        </svg>
-      </button>
+      <div class="profile-icon" id="profileIcon"></div>
     </div>
   </nav>
+
+  <!-- Profile Edit Modal -->
+  <div class="modal" id="profileModal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2>Edit Profile</h2>
+      <form id="profileForm">
+        <input type="text" id="profileName" placeholder="Your Name" required>
+        <input type="email" id="profileEmail" placeholder="Your Email" required>
+        <textarea id="profileBio" placeholder="About You"></textarea>
+        <button type="submit">Save Profile</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Profile Page -->
+  <div class="profile-page" id="profilePage" style="display: none;">
+    <nav class="navbar profile-nav">
+      <div class="nav-container">
+        <button class="back-btn" id="backBtn">← Back</button>
+        <div class="logo">My Profile</div>
+        <div style="width: 50px;"></div>
+      </div>
+    </nav>
+
+    <div class="profile-main">
+      <div class="profile-header">
+        <div class="profile-icon-large" id="profileIconLarge">👤</div>
+        <div class="profile-info">
+          <h1 id="profilePageName">Your Name</h1>
+          <p id="profilePageEmail">your.email@campus.edu</p>
+          <p id="profilePageBio">Your bio goes here</p>
+          <button class="edit-profile-btn" id="editProfileBtn">Edit Profile</button>
+        </div>
+      </div>
+
+      <div class="profile-stats">
+        <h2>Profile Stats</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number" id="viewCount">0</div>
+            <div class="stat-label">Profile Views</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="clickCount">0</div>
+            <div class="stat-label">Profile Clicks</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="interactionCount">0</div>
+            <div class="stat-label">Total Interactions</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="recent-viewers">
+        <h2>Recent Profile Viewers</h2>
+        <div class="viewers-list" id="viewersList">
+          <p class="empty-message">No viewers yet. Share your profile!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="mainContainer">
+    <h1>Welcome to ConnectCampus</h1>
+    <p>A campus connectivity and collaboration platform</p>
+  </div>
+
+  <!-- Content Sections -->
+  <section id="education" class="content-section">
+    <h2>Education</h2>
+    <p>Explore educational resources, courses, and learning opportunities on campus.</p>
+  </section>
+
+  <section id="social" class="content-section">
+    <h2>Social Life</h2>
+    <p>Connect with students, join clubs, and enjoy social events around campus.</p>
+  </section>
+
+  <section id="community" class="content-section">
+    <h2>Community</h2>
+    <p>Build meaningful connections and contribute to our campus community.</p>
+  </section>
+
+  <section id="opportunities" class="content-section">
+    <h2>Opportunities</h2>
+    <p>Discover internships, jobs, research opportunities, and more.</p>
+  </section>
+
+  <section id="contact" class="content-section">
+    <h2>Contact</h2>
+    <p>Get in touch with us for support, feedback, or inquiries.</p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ConnectCampus</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar" id="mainNav">
+    <div class="nav-container">
+      <div class="logo">ConnectCampus</div>
+      <ul class="nav-menu">
+        <li><a href="#education">Education</a></li>
+        <li><a href="#social">Social Life</a></li>
+        <li><a href="#community">Community</a></li>
+        <li><a href="#opportunities">Opportunities</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="profile-icon" id="profileIcon"></div>
+    </div>
+  </nav>
+
+  <!-- Profile Edit Modal -->
+  <div class="modal" id="profileModal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2>Edit Profile</h2>
+      <form id="profileForm">
+        <input type="text" id="profileName" placeholder="Your Name" required>
+        <input type="email" id="profileEmail" placeholder="Your Email" required>
+        <textarea id="profileBio" placeholder="About You"></textarea>
+        <button type="submit">Save Profile</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Profile Page -->
+  <div class="profile-page" id="profilePage" style="display: none;">
+    <nav class="navbar profile-nav">
+      <div class="nav-container">
+        <button class="back-btn" id="backBtn">← Back</button>
+        <div class="logo">My Profile</div>
+        <div style="width: 50px;"></div>
+      </div>
+    </nav>
+
+    <div class="profile-main">
+      <div class="profile-header">
+        <div class="profile-icon-large" id="profileIconLarge">👤</div>
+        <div class="profile-info">
+          <h1 id="profilePageName">Your Name</h1>
+          <p id="profilePageEmail">your.email@campus.edu</p>
+          <p id="profilePageBio">Your bio goes here</p>
+          <button class="edit-profile-btn" id="editProfileBtn">Edit Profile</button>
+        </div>
+      </div>
+
+      <div class="profile-stats">
+        <h2>Profile Stats</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number" id="viewCount">0</div>
+            <div class="stat-label">Profile Views</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="clickCount">0</div>
+            <div class="stat-label">Profile Clicks</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="interactionCount">0</div>
+            <div class="stat-label">Total Interactions</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="recent-viewers">
+        <h2>Recent Profile Viewers</h2>
+        <div class="viewers-list" id="viewersList">
+          <p class="empty-message">No viewers yet. Share your profile!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="mainContainer">
 
   <div class="container">
     <h1>Welcome to ConnectCampus</h1>
@@ -79,6 +256,32 @@
       </form>
     </div>
   </div>
+
+  <!-- Content Sections -->
+  <section id="education" class="content-section">
+    <h2>Education</h2>
+    <p>Explore educational resources, courses, and learning opportunities on campus.</p>
+  </section>
+
+  <section id="social" class="content-section">
+    <h2>Social Life</h2>
+    <p>Connect with students, join clubs, and enjoy social events around campus.</p>
+  </section>
+
+  <section id="community" class="content-section">
+    <h2>Community</h2>
+    <p>Build meaningful connections and contribute to our campus community.</p>
+  </section>
+
+  <section id="opportunities" class="content-section">
+    <h2>Opportunities</h2>
+    <p>Discover internships, jobs, research opportunities, and more.</p>
+  </section>
+
+  <section id="contact" class="content-section">
+    <h2>Contact</h2>
+    <p>Get in touch with us for support, feedback, or inquiries.</p>
+  </section>
 
   <script src="script.js"></script>
 </body>
