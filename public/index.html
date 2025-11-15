@@ -164,6 +164,39 @@
     <p>Get in touch with us for support, feedback, or inquiries.</p>
   </section>
 
+  <div id="authContainer" class="auth-container">
+    <div class="auth-card">
+      <h1>Welcome to ConnectCampus</h1>
+      <p class="auth-subtitle">Connect with students from your school</p>
+      
+      <form id="authForm" class="auth-form">
+        <div class="form-group">
+          <label for="authEmail">Email</label>
+          <input type="email" id="authEmail" placeholder="your.email@campus.edu" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="authSchool">School</label>
+          <input type="text" id="authSchool" placeholder="Your University/College" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="authAge">Age</label>
+          <input type="number" id="authAge" min="13" max="120" placeholder="18" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="authName">Full Name</label>
+          <input type="text" id="authName" placeholder="John Doe" required>
+        </div>
+        
+        <button type="submit" class="auth-btn">Sign Up / Sign In</button>
+      </form>
+      
+      <p class="auth-note">By continuing, you agree to our Terms of Service</p>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
